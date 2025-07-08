@@ -1,0 +1,254 @@
+/* Overlay para escurecer o fundo */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Estilo do container do login */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px white;
+    width: 27%;
+    gap: 0.2rem;
+    height: auto;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.login-container #login-logo{
+    width: auto;
+    height: 2.5rem;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
+}
+
+.login-container a{
+    width: 60%;
+    text-align: left;
+    text-decoration: double;
+    color: #0056b3;
+}
+
+.login-container a:hover{
+    text-decoration: double;
+    color: #151617;
+}
+
+.login-container h4{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Botão de fechar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+}
+
+.login-container form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input-popup {
+    display: flex;
+    width: 90%;
+    height: 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    margin-bottom: 0.5rem;
+
+}
+
+#input-popup img{
+    display: flex;
+    width: auto;
+    margin: 0;
+    height: 100%;
+    scale: 0.5;
+    /* border: 1px solid black; */
+}
+
+/* Estilização dos inputs */
+.login-input1 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: none;
+    /* border: 1px solid black; */
+    font-size: 1rem;
+}
+
+.login-input1:hover {
+    background-color: rgba(0, 187, 255, 0.063);
+}
+
+.login-input1::placeholder {
+    font-size: 1rem;
+    opacity: 0.7;
+    font-weight: 500;
+    font-family: 'Montserrat';
+}
+
+.login-input1:focus {
+    background-color: rgba(0, 187, 255, 0.049);
+    box-shadow: 0px 1px 0px 0px rgba(0, 187, 255, 0.693);
+    outline: none;
+}
+
+.login-remember {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+}
+
+.login-remember a, label{
+    font-size: 0.9rem;
+    text-align: right;
+    font-weight: 500;
+    z-index: 1;
+}
+
+#remember {
+    cursor: pointer;
+}
+
+
+/* Botão de login */
+.login-button {
+  background: linear-gradient(270deg, #000000 0%, #1882B6 100%);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+  transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+}
+
+.login-button:active {
+    transform: scale(0.95); /* Efeito de leve aumento ao passar o mouse */
+}
+
+.login-hr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.login-hr hr{
+    opacity: 0.5;
+    width: 25%;
+}
+
+.login-with {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.login-with-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 8px 5px;
+    width: 9rem;
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid #ccc;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.login-with-button img{
+    scale: 0.7;
+    margin: 0;
+}
+
+.login-with-button:hover {
+    transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+}
+
+.login-with-button:active {
+    transform: scale(0.95); /* Efeito de leve aumento ao passar o mouse */
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 660px) {
+
+    .login-container {
+        padding: 10px;
+        border-radius: 10px;
+        width: 350px;
+    }
+    .login-container h4{
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .login-input::placeholder {
+        font-size: 1rem;
+        opacity: 0.7;
+        font-weight: 500;
+        font-family: 'Montserrat';
+    }
+}

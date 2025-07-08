@@ -1,0 +1,298 @@
+.divContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: sans-serif;
+  margin-block: 2rem;
+  @media(max-width: 700px) {
+    max-width: 90%;
+    p {
+        font-size: 0.8rem;
+    }
+    button {
+        font-size: 0.8rem;
+    }
+    label {
+        font-size: 1rem;
+    }
+    h3 {
+        font-size: 0.8rem;
+    }
+  }
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  font-size: 2rem;
+  background-color: #0d69b5; /* exemplo de cor primária */
+  color: #fff;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.planPrice {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #0d69b5;
+}
+
+.changeCountryBtn {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.changeCountryBtn:hover {
+  text-decoration: underline;
+}
+
+/* Campos do formulário */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.fieldGroup label {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.input,
+.select {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #0d69b5;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  @media(max-width: 700px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    .fieldGroup{
+        width: 100%;
+    }
+  }
+}
+
+.threeColumns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  @media(max-width: 700px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    .fieldGroup{
+        width: auto;
+    }
+    .select{
+        max-width: fit-content;
+    }
+    .input {
+        max-width: fit-content;
+    }
+  }
+}
+
+/* Wrapper específico para campo Telefon e CEP */
+.phoneWrapper {
+  display: flex;
+}
+
+.phoneWrapper .select {
+  width: 30%;
+  margin-right: 0.5rem;
+  @media(max-width: 700px) {
+    min-width: 7rem;
+  }
+}
+
+.phoneWrapper .input {
+  min-width: 70%;
+  @media(max-width: 700px) {
+    min-width: 11rem;
+  }
+}
+
+.cepWrapper {
+  display: flex;
+}
+
+.cepWrapper .input {
+  flex: 1;
+}
+
+.searchCepBtn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+/* Seletor de método de pagamento */
+.paymentMethods {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  @media(max-width: 700px) {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+.methodBtn {
+  flex: 1;
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+  @media(max-width: 700px) {
+    min-width: 8rem;
+  }
+}
+
+.methodBtn:hover {
+  background-color: #f0f0f0;
+}
+
+.methodBtnActive {
+  border-color: #0d69b5;
+  background-color: #e5f0ff;
+}
+
+/* Seção de Dados do Cartão */
+.cardSection {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  color: #0d69b5;
+}
+
+/* Informações de CVV */
+.infoCvv {
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+/* Outras formas de pagamento (PIX, Hotmart, Boleto) */
+.otherMethodsSection {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Detalhes da compra e botão */
+.purchaseDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detailsLeft,
+.detailsRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+}
+
+.detailItem {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.25rem 0 0;
+}
+
+/* Botão principal */
+.buyButton {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0d69b5;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buyButton:hover {
+  background-color: #09509c;
+}

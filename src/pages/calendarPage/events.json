@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "name": "A largada para a jornada de superação está dada!",
+      "date": "2025-04-05",
+      "local": "Ginásio Newton de Faria – Av. Sen. José Lourenço Dias",
+      "time": "08:00:00",
+      "distance_km": 42.195,
+      "type": "Maratona"
+    },
+    {
+      "id": 2,
+      "name": "Corrida da Superação",
+      "date": "2025-05-01",
+      "local": "Estádio Nacional",
+      "time": "09:00:00",
+      "distance_km": 10,
+      "type": "Corrida de rua"
+    },
+    {
+      "id": 3,
+      "name": "Jiu-jitsu Challenge",
+      "date": "2025-06-15",
+      "local": "Arena Jiu-Jitsu",
+      "time": "10:00:00",
+      "distance_km": null,
+      "type": "Jiu-jitsu"
+    },
+    {
+      "id": 4,
+      "name": "Jiu-jitsu Challenge Pro",
+      "date": "2025-06-15",
+      "local": "Arena Jiu-Jitsu Pro",
+      "time": "10:00:00",
+      "distance_km": null,
+      "type": "Jiu-jitsu"
+    },
+    {
+      "id": 5,
+      "name": "Desafio Trail Run da Serra",
+      "date": "2025-07-20",
+      "local": "Parque Nacional da Serra dos Órgãos",
+      "time": "07:30:00",
+      "distance_km": 21,
+      "type": "Trail run"
+    },
+    {
+      "id": 6,
+      "name": "Corrida Noturna Urbana",
+      "date": "2025-08-10",
+      "local": "Centro Histórico - Praça Central",
+      "time": "20:00:00",
+      "distance_km": 5,
+      "type": "Corrida de rua"
+    },
+    {
+      "id": 7,
+      "name": "Triathlon da Costa Verde",
+      "date": "2025-09-01",
+      "local": "Orla de Angra dos Reis",
+      "time": "06:00:00",
+      "distance_km": 51.5,
+      "type": "Triathlon"
+    },
+    {
+      "id": 8,
+      "name": "Corrida Kids – Pequenos Atletas",
+      "date": "2025-09-15",
+      "local": "Parque Municipal Infantil",
+      "time": "09:30:00",
+      "distance_km": 1,
+      "type": "Corrida infantil"
+    },
+    {
+      "id": 9,
+      "name": "Maratona do Cerrado",
+      "date": "2025-10-05",
+      "local": "Parque da Cidade – Brasília",
+      "time": "07:00:00",
+      "distance_km": 42.195,
+      "type": "Maratona"
+    },
+    {
+      "id": 10,
+      "name": "Desafio de Subida – Morro do Cruzeiro",
+      "date": "2025-10-19",
+      "local": "Morro do Cruzeiro",
+      "time": "08:00:00",
+      "distance_km": 8,
+      "type": "Corrida de montanha"
+    },
+    {
+      "id": 11,
+      "name": "Campeonato Estadual de Jiu-jitsu",
+      "date": "2025-11-02",
+      "local": "Ginásio Poliesportivo Estadual",
+      "time": "09:00:00",
+      "distance_km": null,
+      "type": "Jiu-jitsu"
+    }
+  ]
+  

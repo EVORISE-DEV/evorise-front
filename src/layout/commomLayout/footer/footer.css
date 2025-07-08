@@ -1,0 +1,221 @@
+.footer {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  background-color: transparent;
+  justify-content: space-around;
+  align-items: flex-start;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border: none;
+  letter-spacing: 0.2rem;
+  color: black;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 2rem;
+  padding-top: 1rem;
+}
+.footer a{
+  color: black;
+}
+
+#first{
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#terms{
+  font-weight: 350;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+#police{
+  font-weight: 350;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.page-bottom{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1.8rem;
+  padding-inline: 0.3rem;
+  gap: 4rem;
+  border-bottom: 1px solid #00000039;
+  padding-bottom: 4rem;
+}
+
+
+
+.page-bottom-ul {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 6rem;
+}
+
+.page-bottom ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  list-style: none;
+  gap: 1rem;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+}
+
+.page-bottom li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.page-bottom a{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #000;
+}
+
+@media (max-width: 1110px) {
+  .footer {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  #first,  #terms, #police{
+    font-size: 0.7rem;
+  }
+
+  .footer {
+    max-width: 100%;
+  }
+
+  .page-bottom{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1.8rem;
+    padding-inline: 0.3rem;
+    gap: 1rem;
+    border-bottom: 1px solid #00000039;
+    padding-bottom: 4rem;
+  }
+  
+
+  
+  .page-bottom-ul {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .page-bottom ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+    gap: 1rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0;
+  }
+  
+  .page-bottom li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .page-bottom a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #000;
+  }
+  
+}
+
+@media (max-width: 810px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    gap: 0.8rem;
+  }
+
+  #first,  #terms, #police{
+    font-size: 0.7rem;
+  }
+
+  .page-bottom{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1.8rem;
+    padding-inline: 0.3rem;
+    gap: 2rem;
+    border-bottom: 1px solid #00000039;
+    padding-bottom: 4rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    padding-top: 0.4rem;
+    gap: 1rem;
+  }
+
+  
+}
+
+@media (max-width: 500px) {
+  .page-bottom-ul {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+  

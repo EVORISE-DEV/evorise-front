@@ -1,0 +1,400 @@
+/* ============================
+   ESTRUTURA PRINCIPAL
+============================ */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1rem;
+  font-family: 'Montserrat';
+  @media(max-width: 500px) {
+    padding-top: 0rem;
+  }
+}
+
+/* ============================
+   SEÇÕES GENÉRICAS
+============================ */
+.landing-section,
+.landing-section2,
+.landing-section3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+/* ================================
+   SEÇÃO 5 - BLOCO GERAL
+================================= */
+#section5 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   TÍTULO DA GARANTIA
+================================= */
+#guarantee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+}
+
+/* Subtítulo "dias de garantia" */
+#section5 h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: max-content;
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: 1rem;
+  transform: translateY(65px);
+  background: linear-gradient(90deg, #000000 0%, #1882B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+}
+
+/* Número "7" */
+#section5 .h2-7 {
+  font-size: 10.5rem;
+  transform: translateY(80px);
+  background: linear-gradient(180deg, #000000 0%, #20AAEE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================================
+   BLOCO DE CONTEÚDO E BOTÃO
+================================= */
+.section5-guarantee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  background: radial-gradient(109.14% 109.14% at -6.81% 19.92%, #08142D 40.5%, #1B438E 100%);
+  padding: 6rem 5rem;
+  margin-bottom: 0;
+}
+
+.section5-guarantee p {
+  font-size: 1.4rem;
+  font-weight: 450;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* ================================
+   BOTÃO FINAL
+================================= */
+.section5-guarantee button {
+  display: flex;
+  padding: 13px 50px;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #B42636;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.section5-guarantee button:hover {
+  transform: scale(1.05);
+}
+
+.section5-guarantee button:active {
+  transform: scale(0.95);
+}
+
+/* =========== RESPONSIVIDADE =========== */
+
+@media (min-width: 1500px) {
+
+  /* ================================
+     TÍTULOS GRANDES - SECTION 5
+  ================================= */
+  #section5 h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: 1rem;
+    transform: translateY(65px);
+    color: #fff;
+    background: linear-gradient(90deg, #000000 0%, #1882B6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #section5 .h2-7 {
+    font-size: 10.5rem;
+    transform: translateY(80px);
+    background: linear-gradient(180deg, #000000 0%, #20AAEE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+}
+
+@media (max-width: 1050px) {
+
+  #section5 h2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    color: #fff;
+    transform: translateY(55px);
+    background: linear-gradient(90deg, #000000 0%, #1882B6 100%);
+    -webkit-background-clip: text; /* Aplica o gradiente ao texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para exibir o gradiente */
+    letter-spacing: 1rem;
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+  
+  #section5 .h2-7{
+    background: linear-gradient(180deg, #000000 0%, #20AAEE 100%);
+    -webkit-background-clip: text; /* Aplica o gradiente ao texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para exibir o gradiente */
+    font-size: 6.5rem;
+    transform: translateY(70px);
+  }
+  
+  .scroll-top-button {
+    left: auto;
+    right: 1rem;
+    border: 1px solid white;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+#section5 {
+  display: flex;
+  flex-direction: column;
+}
+
+#guarantee{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+.section5-guarantee{
+  background: radial-gradient(109.14% 109.14% at -6.81% 19.92%, #08142D 40.5%, #1B438E 100%); /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 4rem;
+  padding-inline: 5rem;
+  margin-bottom: 0;
+}
+
+.section5-guarantee p{
+  font-size: 1.2rem;
+  font-weight: 450;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.section5-guarantee button{
+  display: flex;
+  padding: 13px 50px;
+  border-radius: 0.5rem;
+  background-color:#B42636;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.section5-guarantee button:hover{
+  transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+}
+
+.section5-guarantee button:active {
+  transform: scale(0.95); /* Pequeno efeito de clique */
+}
+
+
+
+.scroll-top-button {
+  bottom: 4.5rem;
+}
+
+}
+
+/* Telas até 480px (smartphones pequenos) */
+@media (max-width: 800px) {
+
+  #section5 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #guarantee{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .section5-guarantee{
+    background: radial-gradient(109.14% 109.14% at -6.81% 19.92%, #08142D 40.5%, #1B438E 100%); /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    padding: 3rem;
+    padding-inline: 2rem;
+    margin-bottom: 0;
+  }
+
+  .section5-guarantee p{
+    font-size: 1rem;
+    font-weight: 450;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  #section5 h2{
+    transform: translateY(25px);
+    letter-spacing: 0.4rem;
+    font-size: 2.4rem;
+    font-weight: 800;
+  }
+  
+  #section5 .h2-7{
+    font-size: 3.5rem;
+    transform: translateY(20px);
+  }
+
+  .section5-guarantee button{
+    display: flex;
+    padding: 13px 50px;
+    border-radius: 0.5rem;
+    background-color:#B42636;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .section5-guarantee button:hover{
+    transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+  }
+
+  .section5-guarantee button:active {
+    transform: scale(0.95); /* Pequeno efeito de clique */
+  }
+
+
+  .scroll-top-button {
+    bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 660px){
+
+  #section5 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #guarantee{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .section5-guarantee{
+    padding: 2rem;
+    padding-inline: 1rem;
+    margin-bottom: 0;
+  }
+
+  .section5-guarantee p{
+    font-size: 1rem;
+    font-weight: 450;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  #section5 h2{
+    transform: translateY(25px);
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  #section5 .h2-7{
+    font-size: 3.5rem;
+    transform: translateY(30px);
+  }
+
+  .section5-guarantee button{
+    display: flex;
+    padding: 10px 30px;
+    border-radius: 0.5rem;
+    background-color:#B42636;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .section5-guarantee button:hover{
+    transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+  }
+
+  .section5-guarantee button:active {
+    transform: scale(0.95); /* Pequeno efeito de clique */
+  }
+    
+
+}

@@ -1,0 +1,7 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  padding-top: 10rem; /* Adiciona espaço no topo para compensar o header fixo */
+}

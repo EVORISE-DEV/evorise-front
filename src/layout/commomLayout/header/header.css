@@ -1,0 +1,346 @@
+.main-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0.5rem;
+    border: 6px transparent;
+    font-family: 'Montserrat';
+    min-height: 4rem;
+    /* Então aplicamos o gradient via border-image */
+    box-shadow: 0px 2px 4px 0px #00000040;
+    position: fixed; /* Fixa o header na parte superior da tela */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Mantém o header acima de outros elementos */
+  }
+  
+  /* LOGO: agora deixamos flex: 0 1 auto, sem width fixa */
+  .logo-link {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto; /* permite encolher se necessário  border: 1px solid #B42636;*/
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    /* border: 1px solid black; */
+  }
+  
+  .logo {
+    max-height: 2.3rem;   /* limita a altura para evitar crescer demais */
+    width: auto;        /* ajusta proporcionalmente */
+  }
+  
+  /* MENU DO CENTRO */
+  .middle-menu {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center; 
+    gap: 3rem;   /* evita encolher demais */
+    /* border: 1px solid black; */
+  }
+  
+  .middle-menu a {
+    color: black;
+    text-decoration: none;
+    font-weight: 350;
+    font-size: large;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .middle-menu a:hover {
+    transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+  }
+  
+  /* BOTÕES NO LADO DIREITO */
+  .nav-buttons {
+    display: flex;
+    flex: 0 1 auto;    /* encolhe se necessário, mas não some */
+    justify-content: center;
+    align-items: center;
+    font-size: 90%;
+    gap: 1rem;         /* espaço entre botões */
+    padding: 0.5rem;
+    margin-left: 1rem;
+    /* border: 1px solid black; */
+  }
+  
+  /* BOTÃO GERAL */
+  .nav-buttons .button {
+    color: black;
+    min-width: 4rem;
+    background-color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 8px 15px;
+    transition: background-color 0.5s, color 0.4s;
+    font-weight: normal;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 400;
+  }
+  
+  /* BOTÃO 2 COM COR DE FUNDO */
+  .nav-buttons .button2 {
+    color: white;
+    background: linear-gradient(90deg, #0D2A50 0%, #5A9DF4 100%);
+    border: 1px solid #076A90;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    padding: 8px 18px;
+    transition: background 0.7s, color 0.8s;
+    font-weight: 550;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Montserrat';
+  }
+  
+  /* HOVER */
+  .nav-buttons .button:hover {
+    background-color: #076A90;
+    background: linear-gradient(90deg, #0D2A50 0%, #5A9DF4 100%);
+    color: #fff;
+    font-weight: 450;
+  }
+  .nav-buttons .button2:hover {
+    background: linear-gradient(90deg, #0D2A50 0%, #2e3134 100%);
+    transform: scale(1.07);
+    transition: transform 0.5s ease;
+    color: #fff;
+  }
+
+  .nav-buttons #sair {
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 18px;
+    transition: background 0.7s, color 0.8s;
+    font-weight: 550;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Montserrat';
+  }
+  
+  /* HOVER */
+  .nav-buttons #sair:hover {
+    color: #fff;
+    font-weight: 600;
+  }
+  .nav-buttons #sair:hover {
+    background: linear-gradient(90deg, #0D2A50 0%, #2e3134 100%);
+    transform: scale(1.07);
+    transition: transform 0.5s ease;
+    color: #fff;
+  }
+
+  /* Ícone do menu hambúrguer */
+.menu-toggle {
+  display: none;
+
+}
+
+/* Menu lateral */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar-menu.open {
+  right: 0;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-menu a:last-child {
+  border-bottom: none;
+}
+
+.sidebar-menu .button2 {
+  background-color: #15335B;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 500;
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-menu .button2:hover {
+  background-color: #15335B;
+  transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+}
+
+.sidebar-menu .button2:active {
+  background-color: #15335B;
+  transform: scale(0.95); /* Pequeno efeito de clique */
+}
+
+.sidebar-menu a:hover {
+  background-color: #2e313452;
+  transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+}
+
+  
+  /* ============================= */
+  /* MEDIA QUERIES (caso queira ainda mais refino) */
+  /* ============================= */
+  
+  /* Tablets / telas ~992px */
+
+  /* Overlay para escurecer o fundo */
+
+
+/* Responsividade */
+
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  /* Smartphones / telas ~768px */
+  @media (max-width: 1030px){
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      width: auto;
+      height: 2rem;
+      flex: none;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+      text-decoration: none;
+      /* border: 1px solid black; */
+    }
+
+    .middle-menu {
+      gap: 1rem;              /* espaço entre links */
+    }
+
+    .sidebar-menu {
+      width: 200px;
+    }
+
+      /* BOTÃO GERAL */
+    .button {
+    }
+    
+
+    .nav-buttons #sair {
+      color: black;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 18px;
+      transition: background 0.7s, color 0.8s;
+      font-weight: 550;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: 'Montserrat';
+    }
+  }
+  @media (max-width: 950px) {
+    .main-header {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .logo-link {
+        padding-left: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .nav-buttons {
+      margin-top: 10px;
+    }
+
+    /* MENU DO CENTRO */
+    .middle-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;     /* se não couber em uma linha, quebra */
+        gap: 1rem;              /* espaço entre links */
+    }
+    
+    .middle-menu a {
+        color: black;
+        text-decoration: none;
+        font-weight: 350;
+        font-size: large;
+        transition: color 0.2s;
+    }
+
+    .middle-menu,
+    .nav-buttons {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: block;
+      position: fixed;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+      right: 1rem;
+    }
+
+    .sidebar-menu .button, 
+    .sidebar-menu .button2 {
+      margin-top: 1rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+  
+  /* Telas muito pequenas (~480px) */
+  @media (max-width: 500px) {
+    .sidebar-menu{
+      padding-top: 2rem;
+    }
+
+    .sidebar-menu .button2{
+      background-color: #15335B;
+      color: #fff;
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+  }
+  

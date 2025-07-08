@@ -1,0 +1,330 @@
+
+/* ================================
+   CONTAINER PRINCIPAL DA SEÇÃO 4
+================================= */
+.section4_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+/* ================================
+   BLOCO WHATSAPP COM GRADIENTE
+================================= */
+.section4_container_wp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-top: 5rem;
+  border: 3px solid #00BBFF;
+  border-radius: 0.5rem;
+  background: linear-gradient(98.9deg, #1E90AA 33.76%, #001026 96.62%);
+  color: #fff;
+  position: relative;
+  @media(max-width: 1120px) {
+    min-height: 15rem;
+    width: 70%;
+    .section4_container_wp_img {
+      position: absolute;
+      width: auto;
+      height: 20rem;
+      z-index: 0;
+      opacity: 0.24;
+      top: 0;
+      img {
+        width: auto;
+        height: 15rem;
+      }
+    }
+  }
+  @media(max-width: 700px) {
+    width: 90%;
+    .section4_container_wp_img {
+      position: absolute;
+      width: auto;
+      height: 20rem;
+      z-index: 0;
+      opacity: 0.14;
+      top: 0;
+      img {
+        width: auto;
+        height: 15rem;
+      }
+    }
+  }
+}
+
+
+/* ================================
+   BLOCO DE TEXTO À ESQUERDA
+================================= */
+.section4_container_wp_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  margin: 1.5rem 1rem;
+  padding-inline: 0;
+  @media(max-width: 1120px) {
+    z-index: 1;
+    width: 100%;
+  }
+}
+
+.section4_container_wp_text h4 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  width: fit-content;
+  @media(max-width: 1120px) {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
+
+.section4_container_wp_text p {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+  @media(max-width: 1120px) {
+    padding-inline: 0;
+  }
+}
+
+
+/* ================================
+   BOTÃO
+================================= */
+.section4_container_wp_text button {
+  display: flex;
+  padding: 10px 50px;
+  border-radius: 0.5rem;
+  background-color: #B42636;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  @media(max-width: 1120px) {
+    font-size: 1rem;
+  }
+}
+
+.section4_container_wp_text button:hover {
+  background-color: #971f2d;
+  transform: scale(1.05);
+}
+
+.section4_container_wp_text button:active {
+  transform: scale(0.95);
+}
+
+
+.section4_container_h4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 9rem;
+}
+
+.section4_container_h4 h4{
+  max-width: 100%;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 130%;
+  letter-spacing: 8%;
+  text-align: center;
+  vertical-align: middle;
+  @media(max-width: 1120px) {
+    width: 90%;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
+
+
+.section4_container_evorise{
+  display: flex;
+  width: 85%;
+  min-height: 45rem;
+  justify-content: center;
+  align-items: stretch; /* faz as filhas esticarem até o height do pai */
+  flex-direction: row;
+  margin-top: 5rem;
+  box-shadow: -1px 1px 5px 2px #00000040;
+  border-radius: 20px;
+  @media(max-width: 1120px) {
+    flex-direction: column;
+    width: 60%;
+    min-width: 23rem;
+  }
+}
+
+
+/* =====================================
+   TABELA 1 - COMPARAÇÃO DE DESEMPENHO
+===================================== */
+.section4_container_evorise_table1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  @media(max-width: 1120px) {
+    width: 100%;
+    padding-left: 0.5rem;
+  }
+}
+
+
+/* ========== TÍTULOS ========== */
+.section4_container_evorise_table1 th {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 5rem 1rem 1rem;
+}
+
+.th_1 {
+  width: 30%;
+  @media(max-width: 1120px) {
+    display: none;
+    width: 0%;
+  }
+}
+
+.th_2 {
+  width: 70%;
+  @media(max-width: 1120px) {
+    width: 100%;
+    /* border: 1px solid black; */
+  }
+}
+
+
+/* ========== LINHAS ========== */
+.section4_container_evorise_table1 tr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+/* ========== CÉLULAS ========== */
+.section4_container_evorise_table1 td {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 75%;
+  height: 5rem;
+  padding-inline: 1rem;
+  @media(max-width: 1120px) {
+    font-size: 0.9rem;
+  }
+}
+
+.section4_container_evorise_table1 .type {
+  width: 30%;
+  font-style: italic;
+  font-weight: 700;
+}
+
+
+/* ========== IMAGEM "cancel" ========== */
+.section4_container_evorise_table1 .cancel {
+  height: 2rem;
+  width: auto;
+  margin-right: 0.7rem;
+}
+
+
+/* ========== TÍTULO COM GRADIENTE ========== */
+.section4_container_evorise_table1 h4 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(90deg, #F9061D 0%, #A0222E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @media(max-width: 1120px) {
+    font-size: 1.05rem;
+    text-align: center;
+    /* border: 1px solid black; */
+  }
+}
+
+/* ====================================
+   TABELA 2 - EVORISE (SUCESSOS)
+==================================== */
+.section4_container_evorise_table2 {
+  width: 40%;
+  padding: 2rem;
+  color: #fff;
+  border-radius: 20px;
+  border: 2px solid #0A91E4;
+  background: linear-gradient(168.12deg, #112348 3.08%, #12407D 95.55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 1120px) {
+    width: 100%;
+  }
+}
+
+
+/* ========= HEADERS ========= */
+.section4_container_evorise_table2 th {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  @media(max-width: 1120px) {
+    justify-content: center;
+  }
+}
+
+/* ========= LINHAS ========= */
+.section4_container_evorise_table2 tr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* ========= CÉLULAS ========= */
+.section4_container_evorise_table2 td {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 5rem;
+  @media(max-width: 1120px) {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+.section4_container_evorise_table2 .type2 {
+  width: 100%;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ========= IMAGENS ========= */
+.section4_container_evorise_table2 .img_evorise {
+  height: 3rem;
+}
+
+.section4_container_evorise_table2 .success {
+  height: 2rem;
+  width: auto;
+  margin-right: 0.7rem;
+}

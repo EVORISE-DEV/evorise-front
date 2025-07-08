@@ -1,0 +1,470 @@
+/* src/pages/shopPage/shopPage.css */
+h1 {
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+/* ... código existente ... */
+.shop-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: 'Montserrat';
+  box-shadow: 9px 9px 9px 9px rgba(0,0,0,0.2);
+}
+
+.shop-section1 {
+  width: 100%;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+/* Header da Section 1: Paginação e Filtro */
+.shop-section1-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento abaixo do header */
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+
+  
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .pagination-button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    gap: 6px;
+  }
+  
+  .pagination-button:hover {
+    background-color: #ddd;
+  }
+  
+  .pagination-info {
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  .filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    gap: 0.7rem;
+    
+  } 
+  
+  .filter-container .filter-container-cart{
+    color: #808a92;
+    cursor: pointer;
+    font-weight: 200;
+  }
+
+
+
+  .filter-container label {
+    font-weight: 600;
+    text-align: left;
+    margin-right: 0.5rem;
+  }
+
+  .filter-container select {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    width: 220px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .filter-container select:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    transition: border-color 0.2s;
+  }
+  
+  .filter-container select:focus {
+    border-color: #0D99FF;
+    outline: none;
+  }
+  
+  .filter-container input {
+    padding: 6px 8px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    width: 200px;
+  }
+
+  .filter-container input:focus {
+    padding: 6px 8px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #999;
+    margin: 20px 0;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Section 1: Produtos */
+  .shop-section1-products {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .products-grid {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;   
+  }
+
+  .product-card {
+    background-color: #fafafa;
+    box-shadow: 1px 4px 5px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 27rem;
+    width: 16rem;
+    
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .product-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .product-link:hover {
+    text-decoration: none;
+  }
+
+  .product-image-container {
+    display: flex;
+    width: 100%;
+    height: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 0;
+  }
+
+  .product-image {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 90%;
+    border: none;
+    
+  }
+
+  .product-details{
+    height: 40%;
+    width: 100%;
+  }
+
+  .product-name {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #0D99FF;
+    font-weight: 600;
+  }
+
+  .product-description {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  .product-price {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .product-rating {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .product-rating .star {
+    color: #FFD700; /* Cor das estrelas */
+    font-size: 1rem;
+  }
+
+  .rating-number {
+    font-size: 0.9rem;
+    color: #444;
+  }
+
+
+  /*Section 2*/
+  .shop-section2 {
+    width: 100%;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  /* Header da Section 2:  */
+  .shop-section2-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento abaixo do header */
+    box-shadow: 9px 9px 9px 9px rgba(0,0,0,0.2);
+    padding: 0.5rem;
+  }
+
+  .shop-section2-reviews {
+    width: 100%;
+    max-width: 120rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+/* Container de Navegação das Avaliações */
+.reviews-navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Botões de Navegação */
+.nav-button {
+  background-color: transparent;
+  border: none;
+  color: #0b7dda;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button:disabled {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.nav-button:hover:not(:disabled) {
+  background-color: whitesmoke;
+}
+
+/* Container de Avaliações */
+.reviews-grid {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  overflow-x: auto;
+  flex-direction: row;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.review-card {
+  flex: 0 0 calc(16.666% - 20px); /* 6 reviews por vez: 100 / 6 ≈ 16.666% */
+  background-color: #fff;
+  border-left: 4px solid #B42636;
+  padding: 16px 20px;
+  border-radius: 4px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.review-header {
+  margin-bottom: 10px;
+}
+
+.review-user-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0D99FF;
+  margin: 0;
+}
+
+.review-user-email {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.review-rating .star {
+  color: #FFD700; /* Cor das estrelas */
+  font-size: 1rem;
+}
+
+.rating-number {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.review-comment {
+  font-style: italic;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.review-product {
+  font-size: 0.95rem;
+  color: #444;
+  font-weight: 500;
+}
+
+/*Section 2*/
+.shop-section3 {
+  width: 100%;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+/* Header da Section 2:  */
+.shop-section3-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Espaço entre os itens */
+  align-items: center;
+  margin-bottom: 20px; /* Espaçamento abaixo do header */
+  box-shadow: 9px 9px 9px 9px rgba(0,0,0,0.2);
+  padding: 0.5rem;
+}
+
+.cart-total-badge {
+  background-color: #B42636;
+  color: white;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+}
+
+  
+  /* ... restante do CSS existente ... */
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    /* Ajustes para telas menores */
+  
+    .shop-section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .filter-container {
+      align-items: flex-start; /* Alinha à esquerda em telas pequenas */
+      width: 100%;
+    }
+  
+    .filter-container input {
+      width: 100%; /* Ocupa toda a largura disponível */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Ajustes para telas muito pequenas */
+  
+    .pagination-info {
+      display: none; /* Oculta informações de paginação para salvar espaço */
+    }
+  
+    .filter-container input {
+      width: 100%; /* Mantém a largura total */
+    }
+  }
+  
