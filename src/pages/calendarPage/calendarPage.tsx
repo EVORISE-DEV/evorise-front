@@ -66,7 +66,8 @@ import { getEvents } from 'src/services/calendar/CalendarService.tsx';
               onDateChange={setSelectedDate}
               onDescChange={setSelectedDesc}
             />
-          </div>
+          </div> 
+          {/*  */}
           <div className="calendar-results">
               <div className="calendar-results-container">
                   <ul className="calendar-results-cards">
