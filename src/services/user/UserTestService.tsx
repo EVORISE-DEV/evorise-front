@@ -1,82 +1,75 @@
+// src/services/user.tsx
 import axios from 'axios';
-import { IAddress } from '../address/AddressService';
-import { IContact } from './../contact/ContactService';
-import { IProfile } from '../profile/ProfileService';
-import { ISignature } from './../signature/SignatureService';
+import React from 'react'; 
+import api from '../api/api';
+// (Nota: importar React aqui não é comum para um service, mas
+//  como pedimos .tsx, adicionamos a import do React para evitar warnings)
 
-const baseURL = 'http://localhost:3333';
-
-// Definimos a interface de usuário
-export interface IUser {
-  id: string;              
+export interface User {
+  id: number;
   name: string;
-  surname: string;
   email: string;
-  password?: string;        
-  confirmPassword?: string;
-  oldPassword?: string;     
-  profile?: IProfile; 
-  contact?: IContact;   
-  address?: IAddress; 
-  signature?:ISignature;  
+  profile: {
+    name: string;
+    id: number;
+  },
+  createdAt?: string;
+  updatedAt?: string;
 }
 
-// Função para pegar o token armazenado
-const getAuthHeaders = () => {
-  const token = localStorage.getItem('token'); 
-  return { headers: { Authorization: `Bearer ${token}` } };
-};
+// Exemplo de base URLs
+const baseUrl = 'http://localhost:3333/users';
 
-// 1) Listar todos os usuários
-export async function getUsers(): Promise<IUser[]> {
-  try {
-    const response = await axios.get<IUser[]>(`${baseURL}/users`, getAuthHeaders());
-    return response.data;
-  } catch (error: any) {
-    console.error('Erro ao buscar usuários:', error.response?.data?.error || error);
-    throw error;
-  }
+const Url = 'http://localhost:3333/';
+
+/**
+ * Listar todos os usuários
+ */
+export async function listUsers(): Promise<User[]> {
+  const response = await axios.get<User[]>(`${baseUrl}`);
+  return response.data;
 }
 
-// 2) Buscar um usuário pelo ID
-export async function getUserById(id?: string): Promise<IUser> {
-  try {
-    const response = await axios.get<IUser>(`${baseURL}/users/${id}`, getAuthHeaders());
-    return response.data;
-  } catch (error: any) {
-    console.error('Erro ao buscar usuário:', error.response?.data?.error || error);
-    throw error;
-  }
+/**
+ * Criar um novo usuário
+ */
+export async function createUser(user: User): Promise<User> {
+  const response = await axios.post<User>(`${baseUrl}`, user);
+  return response.data;
 }
 
-// 3) Criar um novo usuário
-export async function createUser(userData: IUser): Promise<IUser> {
-  try {
-    const response = await axios.post<IUser>(`${baseURL}/users`, userData, getAuthHeaders());
-    return response.data;
-  } catch (error: any) {
-    console.error('Erro ao criar usuário:', error.response?.data?.error || error);
-    throw error;
-  }
+/**
+ * Obter usuário por ID
+ */
+export async function getUserById(id: number): Promise<User> {
+  const response = await axios.get<User>(`${baseUrl}/${id}`);
+  return response.data;
 }
 
-// 4) Atualizar um usuário
-export async function updateUser(id: string, userData: Partial<IUser>): Promise<IUser> {
-  try {
-    const response = await axios.put<IUser>(`${baseURL}/users/${id}`, userData, getAuthHeaders());
-    return response.data;
-  } catch (error: any) {
-    console.error('Erro ao atualizar usuário:', error.response?.data?.error || error);
-    throw error;
-  }
+/**
+ * Buscar usuários por critérios (ex.: {id, name, email, profile_id})
+ */
+export async function getUserBy(
+  criteria: { id?: number; name?: string; email?: string; profile_id?: number; }
+): Promise<User[] | { error: string }> {
+  const response = await axios.post<User[] | { error: string }>(
+    `${Url}usersBy`,
+    criteria
+  );
+  return response.data;
 }
 
-// 5) Deletar um usuário
-export async function deleteUser(id: string): Promise<void> {
-  try {
-    await axios.delete(`${baseURL}/users/${id}`, getAuthHeaders());
-  } catch (error: any) {
-    console.error('Erro ao deletar usuário:', error.response?.data?.error || error);
-    throw error;
-  }
+/**
+ * Atualizar um usuário
+ */
+export async function updateUser(id: number, user: User): Promise<User> {
+  const response = await api.put<User>(`${baseUrl}/${id}`, user);
+  return response.data;
+}
+
+/**
+ * Deletar um usuário
+ */
+export async function deleteUser(id: number): Promise<void> {
+  await axios.delete<void>(`${baseUrl}/${id}`);
 }

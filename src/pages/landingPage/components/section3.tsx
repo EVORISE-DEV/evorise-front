@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import img9 from '../../../assets/svg/image 9.svg';
 import evorise from '../../../assets/svg/EVORISE_shadow.svg';
 import success from '../../../assets/svg/success.svg';
@@ -24,7 +24,7 @@ export const Section3: React.FC = () => {
                         </div>
                     </div>
                     <div className={styles.section4_container_wp_img}>
-                        <img src={img9} alt="img9"  />
+                        <img src={img9} alt="img9" loading="lazy" />
                     </div>
                 </div>
                 <div className={styles.section4_container_h4}>

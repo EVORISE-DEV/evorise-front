@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import axios from "axios";
 import './loginPopUp.css';
 import logo from   '../../assets/images/group-1.png';
-import { login } from "../../services/session/SessionService.tsx";
+import { indexGoogle, login } from "../../services/session/SessionService.tsx";
 import emailIcon from '../../assets/svg/ic_round-alternate-email.svg';
 import passwordIcon from '../../assets/svg/mdi_password-outline.svg';
 import microsoftIcon from '../../assets/svg/logos_microsoft-icon.svg';
 import { FcGoogle } from "react-icons/fc";
+import { useAuth } from "src/context/AuthContext.tsx";
 
 const LoginPopup = ({ isOpen, closePopup, openRegister } : any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const { login } = useAuth();
 
   const handleLogin = async (e : any) => {
     e.preventDefault();
     setErrorMessage("");
 
     try {
-          const response = await login(email, password);
+          await login(email, password);
 
           closePopup(); // Fecha o pop-up após o login
     } catch (error) {
@@ -26,6 +28,14 @@ const LoginPopup = ({ isOpen, closePopup, openRegister } : any) => {
       console.error("Erro ao logar:", error);
     }
   };
+
+  const google = async () => {
+    try {
+       window.location.href = 'http://localhost:3333/auth/google/callback';
+    } catch (error : any) {
+      console.error("Erro ao fazer login com Google:", error);
+    }
+  }
 
   if (!isOpen) return null;
 
@@ -69,7 +79,7 @@ const LoginPopup = ({ isOpen, closePopup, openRegister } : any) => {
             /> */}
             <input type="checkbox" id="remember" name="remember" value="remember"  />
             <label htmlFor="vehicle1">Lembre-me</label>
-            <a href="/">Esqueceu sua senha?</a>
+            <a href="/request-reset">Esqueceu sua senha?</a>
           </div>
 
           <button className="login-button" type="submit">
@@ -83,7 +93,7 @@ const LoginPopup = ({ isOpen, closePopup, openRegister } : any) => {
         <div className="login-hr"><hr /><p>ou continuar com</p><hr /></div>
 
         <div className="login-with">
-          <button className="login-with-button" >
+          <button onClick={google} className="login-with-button" >
             <FcGoogle size={25}/>
             Google
           </button>

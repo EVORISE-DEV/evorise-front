@@ -10,6 +10,21 @@ export interface Event {
 
 //--------------------------------------//
 
+export interface EventsPage<T> {
+  total: number;
+  limit: number;
+  page: number;
+  totalPages: number;
+  events: T[];
+}
+
+export interface EventFilters {
+  title?: string;
+  description?: string;
+  local?: string;
+  date?: string; // Ex: '2024-09-20'
+  time?: string; // Ex: '07:30:00'
+}
 export interface EventCalendar {
     id: number;
     title: string;
@@ -18,7 +33,7 @@ export interface EventCalendar {
     time: string;
     local: string;
     distances: { id: number; distance: number }[];
-    photos: { id: number; path: string; caption: string }[];
+    photos: { id: number; path: string; caption: string; cover_url: string }[];
 }
 
 export interface EventDistance {

@@ -26,7 +26,7 @@ export const SignPage: React.FC = () => {
               O GUIA DEFINITIVO PARA EVOLUIR NA CORRIDA EM 2025!
               </p>
             <div>
-              <a href="/pagamento"><button>Quero aproveitar o desconto</button></a>
+              <a href="/payment"><button>Quero aproveitar o desconto</button></a>
               
             </div>
           </div>
@@ -108,7 +108,7 @@ export const SignPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <a href="/pagamento"><button className={styles.sign_page_for_only_button}>Quero me inscrever</button></a>
+          <a href="/payment"><button className={styles.sign_page_for_only_button}>Quero me inscrever</button></a>
           
         </div>
 

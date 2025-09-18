@@ -1,15 +1,12 @@
 
-import React, { useEffect, useRef, useState } from 'react';
-import { FaPlay } from 'react-icons/fa';
+import React from 'react';
 import line1 from '../../../assets/svg/descoberta.svg';
 import line2 from '../../../assets/svg/evolucao.svg';
 import line3 from '../../../assets/svg/performance.svg';
 import img8 from '../../../assets/svg/image 8.svg';
-import video from '../../../assets/svg/video_play.svg';
 import styles from './section2.module.css';
-import { IoPlayCircleOutline } from "react-icons/io5";
-import { IoPlayCircle } from "react-icons/io5";
 import Video from './video/video.tsx';
+import cover from '../../../assets/svg/cover_section.svg'
 
 export const Section2: React.FC = () => {
     return (
@@ -18,26 +15,14 @@ export const Section2: React.FC = () => {
             <div className={styles.section3_video}>
                 <div className={styles.section3_video_content}>
                     <div className={styles.section3_video_content_h3} >
-                        <h3>O melhor conteúdo sobre corrida e performance, com aulas abrangendo 
+                        <h3>O melhor conteúdo sobre corrida e performance, com aulas abrangendo <br />
                         todas as habilidades que você precisa para evoluir no esporte.</h3>
                     </div>
                     <div style={{ width: '100%', margin: ' auto', padding: '0 1rem' }}>
-                        <h2>Assista ao nosso tutorial</h2>
-                        {/* Passe aqui o ID do vídeo do YouTube que você quer embedar */}
+                        <h2 style={{color: 'white'}}>Assista ao nosso tutorial</h2>
                         <Video videoId="Ly_6G9oBGgw" title="Tutorial EVORISE" />
                     </div>
                     <div className={styles.section3_video_content_mp4} >
-                        {/* <div className={styles.mp4_video}>
-
-                            <div className={styles.mp4_video_loading}>
-                                <div className={styles.mp4_video_img}>
-                                    <img src={video} alt="video_img" />
-                                </div>
-                                <div className={styles.play_icon}>
-                                    <IoPlayCircle  className={styles.play_icon_svg}/>
-                                </div>
-                            </div>
-                        </div> */}
                         <div className={styles.mp4_video_button}>
                             <button className={styles.mp4_button}>Comece Agora</button>
                         </div>
@@ -73,7 +58,7 @@ export const Section2: React.FC = () => {
                             <h3>Evolução</h3>
                         </div>
                         <div className={styles.line_image_content}>
-                            <img src={line2} alt="E-books e Guias Práticos" className={styles.line_image} />
+                            <img src={line2} alt="E-books e Guias Práticos" className={styles.line_image} loading="lazy"/>
                         </div>
                         <div className={styles.success_child_h5_container}>
                             <h5 className={styles.h5_transparent}>Corredores intermediários buscam aprimorar 

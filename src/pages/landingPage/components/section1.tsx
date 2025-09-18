@@ -1,21 +1,15 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { FaArrowUpWideShort } from 'react-icons/fa6';
-import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './section1.module.css';
-import logo from '../../../assets/images/teste4.jpg';
-import logo2 from '../../../assets/images/teste2.jpg';
-import logo3 from '../../../assets/images/teste3.jpg'; 
-import logo4 from '../../../assets/images/ranking.jpg';
 import cta from '../../../assets/svg/cta_image.svg';
+import cta_webp from '../../../assets/images/cta_image.webp';
 import training from '../../../assets/svg/training.svg';
 import running from '../../../assets/svg/running.svg';
 import challenge from '../../../assets/svg/challenge.svg';
 import award from '../../../assets/svg/awards.svg';
 import ranking from '../../../assets/svg/ranking.svg';
 import recorded from '../../../assets/svg/recorded.svg';
-import Video from './video/video';
 
 export const Section1: React.FC = () => {
     
@@ -130,41 +124,17 @@ export const Section1: React.FC = () => {
                             <button>Quero ser aluno</button>
                         </div>
                     </div>
-                    <div className={styles.carousel_placeholder}>                
-                        <Swiper 
-                            cssMode={true}
-                            navigation={false}
-                            pagination={true}
-                            mousewheel={true}
-                            keyboard={true}
-                            modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-                            autoplay={{
-                            delay: 5500,
-                            disableOnInteraction: false,
-                            }}
-                            slidesPerView = {1}
-                            loop = {true}
-                        >
-                                <img src={cta} alt="Treinos Presenciais" className={styles.carousel_image} />
-                            {/* <SwiperSlide>
-                                <img src={cta} alt="Treinos Presenciais" className={styles.carousel_image} />
-                            </SwiperSlide> */}
-                            {/* <SwiperSlide>
-                                <img src={logo2} alt="Corridas Semanais" className={styles.carousel_image} />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img src={logo3} alt="Conteúdos Gravados" className={styles.carousel_image} />
-                            </SwiperSlide> */}
-                            {/* Adicione mais slides conforme necessário */}
-                        </Swiper>
+                    <div className={styles.carousel_placeholder}>     
+                        <img src={cta_webp} alt="Treinos Presenciais" className={styles.carousel_image} loading="lazy" />           
+
                     </div>
                 </div>
 
                 <div className={styles.cards_container} ref={sliderRef}>
-                    {cards.map((card, index) => (
+                    {[...cards, ...cards].map((card, index) => (
                     <button key={index}  className={styles.card}>
                         <div className="post-card">
-                        <img src={card.img} alt={card.alt} className={styles.card_image} />
+                        <img src={card.img} alt={card.alt} className={styles.card_image} loading="lazy"/>
                         <div className={styles.card_description}>{card.description}</div>
                         </div>
                     </button>
@@ -172,7 +142,7 @@ export const Section1: React.FC = () => {
                 </div>
             </section>
             <div className={styles.title2}>
-                <h3 className={styles.title2_h3}>Tudo o que você vai ter acesso dentro do nosso ecossistema</h3>
+                <h3 className={styles.title2_h3}>Tudo o que você vai ter acesso  dentro<br />do nosso ecossistema da EVORISE</h3>
             </div>
         </div>
     );

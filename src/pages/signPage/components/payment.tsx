@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './payment.module.css';
+import logo_run from '../../../assets/images/logo_run.png'
 
 /**
  * Tipagem mínima para armazenar os dados que nos interessam
@@ -74,9 +75,7 @@ export const PaymentForm: React.FC = () => {
       <div className={styles.header}>
         <div className={styles.headerLeft}>
           <div className={styles.logoBox}>
-            <span className={styles.logoIcon}>
-                🏃‍♂️
-            </span>
+            <img src={logo_run} alt="logo_run" width={40} />
             <div>
               <p className={styles.planLabel}>Assinatura EVORISE</p>
               <p className={styles.planPrice}>12 x de R$ 49,90 / ano</p>

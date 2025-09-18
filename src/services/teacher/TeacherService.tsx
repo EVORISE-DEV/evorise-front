@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {IUser} from '../user/UserTestService.tsx'
+import {User} from '../user/UserTestService.tsx'
 import { IContent } from '../content/ContentService.tsx';
 
 
@@ -13,7 +13,7 @@ export interface ITeacher {
   user_id: string;
   content_id?: number | null;
   // As propriedades abaixo são opcionais, pois elas são trazidas por meio do relacionamento
-  user?: IUser;
+  user?: User;
   content?: IContent;
 }
 

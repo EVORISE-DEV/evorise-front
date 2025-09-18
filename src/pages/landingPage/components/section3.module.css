@@ -147,6 +147,11 @@
     font-size: 1.3rem;
     text-align: center;
   }
+  @media(max-width: 620px) {
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
 
 
@@ -251,7 +256,7 @@
   width: 100%;
   text-align: left;
   background: linear-gradient(90deg, #F9061D 0%, #A0222E 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   @media(max-width: 1120px) {
     font-size: 1.05rem;

@@ -6,3 +6,4 @@ declare module '*.gif';
 declare module '*.svg';
 declare module '*.tsx';
 declare module '*.css';
+declare module '*.webp';

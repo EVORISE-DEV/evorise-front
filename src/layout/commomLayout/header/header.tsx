@@ -5,15 +5,16 @@ import '../../../global.d.tsx';
 import logo from '../../../assets/images/group-1.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
-import { isAuthenticated } from '../../../services/session/SessionService.tsx';
 import LoginPopup from './../../../components/loginPopUp/loginPopUp.tsx';
 import RegisterPopup from '../../../components/registerPopUp/registerPopUp.tsx';
+import { useAuth } from 'src/context/AuthContext.tsx';
+import styles from './header.module.css';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isLoggedIn = isAuthenticated(); // Chamando a função corretamente
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);  
+  const { user, loading, logout } = useAuth(); // Importando o hook useAuth
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,27 +33,23 @@ export function Header() {
 
 
   return (
-    <header className="main-header">
-      {/* Logo à esquerda */}
-      <Link to="/" className="logo-link">
+    <header className={styles.main_header}>
+
+      <Link to="/" className={styles.logo_link}>
         <img src={logo} alt="Logo Evorise" className="logo" />
       </Link>
 
-      {/* Links no centro (ocultos em telas menores) */}
-      <nav className="middle-menu">
-        <Link to="/calendario">Calendário</Link>
-        <Link to="/assinatura">Assinatura</Link>
-        <Link to="/conteudo">Conteúdo</Link>
+      
+      <nav className={styles.middle_menu}>
+        <Link to="/calendar">Calendário</Link>
+        <Link to="/signature">Assinatura</Link>
+        <Link to="/content">Conteúdo</Link>
         <Link to="/ranking">Ranking</Link>
-        <Link to="/loja">Loja</Link>
+        <Link to="/shop">Loja</Link>
       </nav>
 
-      {/* Botões à direita (condicional para usuários autenticados) 
-            <Link to="/login" className="button" onClick={openLoginPopup}>Login</Link>
-            <Link to="/register" className="button2" onClick={openRegisterPopup}>Comece Agora</Link>
-      */}
       <div className="nav-buttons">
-        {!isLoggedIn ? (
+        {!user ? (
           <>
                     <button className="button" onClick={openLoginPopup}>Sou Aluno</button>
                     <button className="button2" onClick={openRegisterPopup}>Comece Agora</button>
@@ -60,7 +57,7 @@ export function Header() {
         ) : (
           <>
             <Link to="/personalPage" className="button">Área do Usuário</Link>
-            <button onClick={() => { localStorage.clear(); window.location.reload(); }}  id="sair">Sair</button>
+            <button onClick={logout }  id="sair">Sair</button>
           </>
         )}
       </div>
@@ -72,13 +69,14 @@ export function Header() {
 
       {/* Menu lateral responsivo */}
       <div className={`sidebar-menu ${isMenuOpen ? 'open' : ''}`}>
-        <Link to="/calendario" onClick={toggleMenu}>Calendário</Link>
-        <Link to="/assinatura" onClick={toggleMenu}>Assinatura</Link>
-        <Link to="/conteudo" onClick={toggleMenu}>Conteúdo</Link>
+        <Link to="/" onClick={toggleMenu}>Início</Link>
+        <Link to="/calendar" onClick={toggleMenu}>Calendário</Link>
+        <Link to="/signature" onClick={toggleMenu}>Assinatura</Link>
+        <Link to="/content" onClick={toggleMenu}>Conteúdo</Link>
         <Link to="/ranking" onClick={toggleMenu}>Ranking</Link>
-        <Link to="/loja" onClick={toggleMenu}>Loja</Link>
+        <Link to="/shop" onClick={toggleMenu}>Loja</Link>
 
-        {!isLoggedIn ? (
+        {!user ? (
           <>
             <button className="button" onClick={openLoginPopup}>Sou Aluno</button>
             <button className="button2" onClick={openRegisterPopup}>Comece Agora</button>
@@ -86,7 +84,7 @@ export function Header() {
         ) : (
           <>
             <Link to="/personalPage" onClick={toggleMenu} className="button">Área do Usuário</Link>
-            <button onClick={() => { localStorage.clear(); window.location.reload(); }} className="button2">Sair da conta</button>
+            <button onClick={logout} className="button2">Sair da conta</button>
           </>
         )}
       </div>

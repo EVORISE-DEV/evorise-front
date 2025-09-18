@@ -1,4 +1,5 @@
 import axios from 'axios';
+import api from '../api/api';
 
 const baseURL = 'http://localhost:3333';
 
@@ -40,7 +41,7 @@ export async function getAddresses(): Promise<IAddress[]> {
 // 2) Criar um novo endereço
 export async function createAddress(addressData: IAddress): Promise<IAddress> {
   try {
-    const response = await axios.post<IAddress>(`${baseURL}/addresses`, addressData, getAuthHeaders());
+    const response = await api.post<IAddress>(`${baseURL}/addresses`, addressData, getAuthHeaders());
     return response.data;
   } catch (error: any) {
     console.error('Erro ao criar endereço:', error.response?.data?.error || error);

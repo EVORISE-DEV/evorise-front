@@ -1,11 +1,12 @@
 import axios from 'axios';
+import api from '../api/api';
 
 const baseURL = 'http://localhost:3333';
 
 // Definimos a interface de contato
 export interface IContact {
   id?: string;
-  telephone?: string | null;
+  telephone?: string ;
   smartphone: string;
 }
 
@@ -19,7 +20,7 @@ export interface IContact {
 // 1) Listar todos os contatos
 export async function getContacts(): Promise<IContact[]> {
   try {
-    const response = await axios.get<IContact[]>(`${baseURL}/contacts` , getAuthHeaders());
+    const response = await api.get<IContact[]>(`${baseURL}/contacts` , getAuthHeaders());
     return response.data;
   } catch (error: any) {
     console.error('Erro ao buscar contatos:', error.response?.data?.error || error);
@@ -30,7 +31,7 @@ export async function getContacts(): Promise<IContact[]> {
 // 2) Criar um novo contato
 export async function createContact(contactData: IContact): Promise<IContact> {
   try {
-    const response = await axios.post<IContact>(`${baseURL}/contacts`, contactData, getAuthHeaders());
+    const response = await api.post<IContact>(`${baseURL}/contacts`, contactData, getAuthHeaders());
     return response.data;
   } catch (error: any) {
     console.error('Erro ao criar contato:', error.response?.data?.error || error);
@@ -41,7 +42,7 @@ export async function createContact(contactData: IContact): Promise<IContact> {
 // 3) Atualizar um contato
 export async function updateContact(id: string, contactData: Partial<IContact>): Promise<IContact> {
   try {
-    const response = await axios.put<IContact>(`${baseURL}/contacts/${id}`, contactData, getAuthHeaders());
+    const response = await api.put<IContact>(`${baseURL}/contacts/${id}`, contactData, getAuthHeaders());
     return response.data;
   } catch (error: any) {
     console.error('Erro ao atualizar contato:', error.response?.data?.error || error);
@@ -52,7 +53,7 @@ export async function updateContact(id: string, contactData: Partial<IContact>):
 // 4) Deletar um contato
 export async function deleteContact(id: string): Promise<{ message: string }> {
   try {
-    const response = await axios.delete<{ message: string }>(`${baseURL}/contacts/${id}`, getAuthHeaders());
+    const response = await api.delete<{ message: string }>(`${baseURL}/contacts/${id}`, getAuthHeaders());
     return response.data;
   } catch (error: any) {
     console.error('Erro ao deletar contato:', error.response?.data?.error || error);

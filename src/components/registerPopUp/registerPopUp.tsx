@@ -1,24 +1,23 @@
 import React, { useState } from "react";
-import axios from "axios";
 import './registerPopUp.css';
 import logo from   '../../assets/images/group-1.png';
-import { login } from "../../services/session/SessionService.tsx";
+import { register } from "../../services/session/SessionService.tsx";
 import personIcon from '../../assets/svg/material-symbols_person-outline-rounded.svg';
 import emailIcon from '../../assets/svg/ic_round-alternate-email.svg';
 import passwordIcon from '../../assets/svg/mdi_password-outline.svg';
 import phoneIcon from '../../assets/svg/mingcute_cellphone-line.svg';
 import microsoftIcon from '../../assets/svg/logos_microsoft-icon.svg';
 import { FcGoogle } from "react-icons/fc";
-import { TfiMicrosoftAlt } from "react-icons/tfi";
 
-const RegisterPopup = ({ isOpen, closePopup, openLogin }) => {
+const RegisterPopup = ({ isOpen, closePopup, openLogin }: any) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [phone, setPhone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleRegister = async (e) => {
+  const handleRegister = async (e: any) => {
     e.preventDefault();
     setErrorMessage("");
 
@@ -28,15 +27,9 @@ const RegisterPopup = ({ isOpen, closePopup, openLogin }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3338/register", {
-        name,
-        email,
-        password,
-      });
-
-      console.log("Registro bem-sucedido:", response.data);
-      closePopup(); // Fecha o pop-up após o cadastro
-      openLogin(); // Abre o pop-up de login automaticamente
+      await register(name, email, password, confirmPassword);
+      closePopup(); 
+      openLogin(); 
     } catch (error) {
       setErrorMessage("Erro ao registrar. Tente novamente.");
       console.error("Erro ao registrar:", error);
@@ -106,7 +99,8 @@ const RegisterPopup = ({ isOpen, closePopup, openLogin }) => {
             <img src={phoneIcon} alt="icon" />
               <input
                 className="register-input1"
-                type="text"
+                type="phone"
+                onChange={(e) => setPhone(e.target.value)}
                 placeholder="Digite seu DDD + WhatsApp"
                 required
               />
@@ -118,10 +112,6 @@ const RegisterPopup = ({ isOpen, closePopup, openLogin }) => {
             Continuar
           </button>
         </form>
-
-        {/* <button className="register-button-continue" onClick={openLogin}>
-          Já tenho conta
-        </button> */}
         <div className="register-hr"><hr /><p>ou continuar com</p><hr /></div>
         <div className="register-with">
           <button className="register-with-button" >
